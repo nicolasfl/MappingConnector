@@ -1,0 +1,27 @@
+Extensions\Bundle\MappingConnectorBundle\Entity\Mapping:
+    repositoryClass: Pim\Bundle\CustomEntityBundle\Entity\Repository\CustomEntityRepository
+    type: entity
+    table: mapping_connector_attributes
+    changeTrackingPolicy: DEFERRED_EXPLICIT
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        code:
+            type: string
+            length: 255
+            unique: true
+        job:
+            type: string
+            length: 255
+        attribute:
+            type: string
+            length: 255
+        title:
+            type: string
+            length: 255
+        sortOrder:
+            type: integer
+    lifecycleCallbacks: {  }

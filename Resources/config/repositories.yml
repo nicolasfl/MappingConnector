@@ -1,0 +1,10 @@
+parameters:
+    extensions_mapping_connector.repository.mapping.class: Extensions\Bundle\MappingConnectorBundle\Doctrine\ORM\Repository\MappingRepository
+
+services:
+    extensions_mapping_connector.repository.mapping:
+        class: '%extensions_mapping_connector.repository.mapping.class%'
+        factory: 'doctrine.orm.entity_manager:getRepository'
+        arguments: ['%extensions_mapping_connector.entity.mapping.class%']
+        tags:
+           - { name: 'pim_repository' }

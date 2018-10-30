@@ -1,0 +1,176 @@
+extensions:
+    pim-mapping-edit-form:
+        module: custom_entity/form/common/edit-form
+
+    pim-mapping-edit-form-breadcrumbs:
+        module: pim/common/breadcrumbs
+        parent: pim-mapping-edit-form
+        targetZone: breadcrumbs
+        config:
+            tab: pim-menu-settings
+            item: pim-menu-settings-mapping
+
+    pim-mapping-edit-form-cache-invalidator:
+        module: pim/cache-invalidator
+        parent: pim-mapping-edit-form
+        position: 1000
+
+    pim-mapping-edit-form-label:
+        module: custom_entity/form/common/label
+        parent: pim-mapping-edit-form
+        targetZone: title
+        position: 90
+
+    pim-mapping-edit-form-form-tabs:
+        module: pim/form/common/form-tabs
+        parent: pim-mapping-edit-form
+        targetZone: content
+        position: 100
+
+    pim-mapping-edit-form-label:
+        module: custom_entity/form/common/label
+        parent: pim-mapping-edit-form
+        targetZone: title
+        position: 100
+
+    pim-mapping-edit-form-secondary-actions:
+        module: pim/form/common/secondary-actions
+        parent: pim-mapping-edit-form
+        targetZone: buttons
+        position: 50
+
+    pim-mapping-edit-form-delete:
+        module: custom_entity/form/common/delete
+        parent: pim-mapping-edit-form-secondary-actions
+        targetZone: secondary-actions
+        position: 100
+        config:
+            route: pim_customentity_rest_delete
+            routeParams:
+                customEntityName: mapping
+            trans:
+                title: extensions_mapping_connector.message.confirmation.remove.mapping
+                container: pim_enrich.confirmation.delete_item
+                success: pim_custom_entity.message.confirmation.removed
+                fail: pim_custom_entity.error.removing
+            redirect: pim_customentity_index
+
+    pim-mapping-edit-form-save-buttons:
+        module: pim/form/common/save-buttons
+        parent: pim-mapping-edit-form
+        targetZone: buttons
+        position: 120
+
+    pim-mapping-edit-form-state:
+        module: pim/form/common/state
+        parent: pim-mapping-edit-form
+        targetZone: state
+        position: 900
+        config:
+            entity: pim_enrich.entity.group.title
+
+    pim-mapping-edit-form-save:
+        module: custom_entity/form/common/save-form
+        parent: pim-mapping-edit-form
+        targetZone: buttons
+        position: 0
+        config:
+            updateSuccessMessage: extensions_mapping_connector.mapping.info.update_successful
+            updateFailureMessage: extensions_mapping_connector.mapping.info.update_failed
+            notReadyMessage: extensions_mapping_connector.mapping.info.field_not_ready
+            url: pim_customentity_rest_edit
+            route_params:
+                customEntityName: mapping
+            redirectAfter: pim_customentity_rest_get
+            excludedProperties: []
+
+    pim-mapping-edit-form-properties-tab:
+        module: pim/common/tab
+        parent: pim-mapping-edit-form-form-tabs
+        targetZone: container
+        position: 100
+        config:
+            label: pim_custom_entity.form.tab.properties.title
+
+    pim-mapping-edit-form-properties:
+        module: pim/common/simple-view
+        parent: pim-mapping-edit-form-properties-tab
+        targetZone: self
+        config:
+            template: pim/template/form/tab/sections
+
+    pim-mapping-edit-form-history:
+        module: pim/common/tab/history
+        parent: pim-mapping-edit-form-form-tabs
+        targetZone: container
+        position: 110
+        config:
+            class: mapping
+            title: pim_custom_entity.form.tab.history.title
+
+    pim-mapping-edit-form-state:
+        module: pim/form/common/state
+        parent: pim-mapping-edit-form
+        targetZone: state
+        position: 900
+        config:
+            entity: pim_enrich.entity.group.title
+
+    pim-mapping-edit-form-properties:
+        module: pim/common/simple-view
+        parent: pim-mapping-edit-form-properties-tab
+        targetZone: self
+        config:
+            template: pim/template/form/tab/sections
+
+    pim-mapping-edit-form-properties-common:
+        module: pim/common/simple-view
+        parent: pim-mapping-edit-form-properties
+        targetZone: accordion
+        position: 100
+        config:
+            template: pim/template/form/tab/section
+            templateParams:
+                sectionTitle: pim_custom_entity.form.tab.properties.section.common
+                dropZone: content
+
+    pim-mapping-edit-form-properties-code:
+        module: pim/form/common/fields/text
+        parent: pim-mapping-edit-form-properties-common
+        targetZone: content
+        position: 90
+        config:
+            fieldName: code
+            label: extensions_mapping_connector.mapping.field.label.code
+            required: true
+            readOnly: true
+
+    pim-mapping-edit-job:
+        module: pim/form/common/fields/text
+        parent: pim-mapping-edit-form-properties-common
+        targetZone: content
+        position: 100
+        config:
+            fieldName: job
+            label: extensions_mapping_connector.mapping.field.label.job
+            required: true
+
+    pim-mapping-edit-attribute:
+        module: pim/form/common/fields/text
+        parent: pim-mapping-edit-form-properties-common
+        targetZone: content
+        position: 110
+        config:
+            fieldName: attribute
+            label: extensions_mapping_connector.mapping.field.label.attribute
+            required: true
+
+    pim-mapping-edit-title:
+        module: pim/form/common/fields/text
+        parent: pim-mapping-edit-form-properties-common
+        targetZone: content
+        position: 120
+        config:
+            fieldName: title
+            label: extensions_mapping_connector.mapping.field.label.title
+            required: true

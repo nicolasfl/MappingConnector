@@ -1,0 +1,27 @@
+parameters:
+    extensions_mapping_connector.connector_name.csv: Extensions Mapping CSV Connector
+    extensions_mapping_connector.job_name.csv_product_import_mapping: 'csv_product_import_mapping'
+    extensions_mapping_connector.job_name.csv_product_export_mapping: 'csv_product_export_mapping'
+
+services:
+    ns.mapping_connector.job.csv_product_import_mapping:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - '%extensions_mapping_connector.job_name.csv_product_import_mapping%'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@extensions_mapping_connector.step.mapping_import'
+        tags:
+            - { name: akeneo_batch.job, connector: '%extensions_mapping_connector.connector_name.csv%', type: '%pim_connector.job.import_type%' }
+
+    ns.mapping_connector.job.csv_product_export_mapping:
+        class: '%pim_connector.job.simple_job.class%'
+        arguments:
+            - '%extensions_mapping_connector.job_name.csv_product_export_mapping%'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            -
+                - '@extensions_mapping_connector.step.mapping_export'
+        tags:
+            - { name: akeneo_batch.job, connector: '%extensions_mapping_connector.connector_name.csv%', type: '%pim_connector.job.export_type%' }

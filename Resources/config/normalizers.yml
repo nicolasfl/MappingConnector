@@ -1,0 +1,9 @@
+parameters:
+    extensions_mapping_connector.normalizer.mapping.class: Extensions\Bundle\MappingConnectorBundle\Normalizer\MappingNormalizer
+
+services:
+    extensions_mapping_connector.normalizer.mapping:
+        public: false
+        class: '%extensions_mapping_connector.normalizer.mapping.class%'
+        tags:
+            - {name: pim_serializer.normalizer, priority: 200}

@@ -1,0 +1,11 @@
+parameters:
+    extensions_mapping_connector.reader.file.csv_product.class: Extensions\Bundle\MappingConnectorBundle\Reader\ProductReader
+
+services:
+    extensions_mapping_connector.reader.file.csv_product:
+        class: '%extensions_mapping_connector.reader.file.csv_product.class%'
+        arguments:
+            - '@pim_connector.reader.file.csv_iterator_factory'
+            - '@extensions_mapping_connector.array_converter.flat.column'
+            - '@pim_connector.reader.file.media_path_transformer'
+            - []

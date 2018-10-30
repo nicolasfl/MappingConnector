@@ -1,0 +1,26 @@
+parameters:
+    extensions_mapping_connector.job.job_parameters.csv_product_import_mapping.class: Extensions\Bundle\MappingConnectorBundle\Job\JobParameters\MappingImport
+    extensions_mapping_connector.job.job_parameters.csv_product_export_mapping.class: Extensions\Bundle\MappingConnectorBundle\Job\JobParameters\MappingExport
+
+services:
+    extensions_mapping_connector.job.job_parameters.csv_product_import_mapping:
+        class: '%extensions_mapping_connector.job.job_parameters.csv_product_import_mapping.class%'
+        arguments:
+            - '@pim_connector.job.job_parameters.default_values_provider.product_csv_import'
+            - '@pim_connector.job.job_parameters.constraint_collection_provider.product_csv_import'
+            - ['%extensions_mapping_connector.job_name.csv_product_import_mapping%']
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }
+
+    extensions_mapping_connector.job.job_parameters.csv_product_export_mapping:
+        class: '%extensions_mapping_connector.job.job_parameters.csv_product_export_mapping.class%'
+        arguments:
+            - '@pim_connector.job.job_parameters.default_values_provider.product_csv_import'
+            - '@pim_connector.job.job_parameters.constraint_collection_provider.product_csv_import'
+            - '@pim_catalog.repository.channel'
+            - '@pim_catalog.repository.locale'
+            - ['%extensions_mapping_connector.job_name.csv_product_export_mapping%']
+        tags:
+            - { name: akeneo_batch.job.job_parameters.constraint_collection_provider }
+            - { name: akeneo_batch.job.job_parameters.default_values_provider }

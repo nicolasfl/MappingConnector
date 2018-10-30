@@ -1,0 +1,52 @@
+extensions:
+    pim-mapping-create-modal:
+        module: custom_entity/form/creation/modal
+        config:
+            labels:
+                title: pim_custom_entity.create_popin.title
+                subTitle: extensions_mapping_connector.menu.item.reference_data.mapping
+            picture: illustrations/User.svg
+            successMessage: pim_custom_entity.message.created
+            editRoute: pim_customentity_rest_edit
+            routerKey: code
+            postUrl:
+                route: pim_customentity_rest_create
+                parameters:
+                    customEntityName: mapping
+
+    pim-mapping-create-code:
+        module: pim/form/common/creation/field
+        parent: pim-mapping-create-modal
+        targetZone: fields
+        position: 10
+        config:
+            identifier: code
+            label: pim_custom_entity.form.field.label.code
+
+    pim-mapping-create-job:
+        module: pim/form/common/creation/field
+        parent: pim-mapping-create-modal
+        targetZone: fields
+        position: 20
+        config:
+            identifier: job
+            label: extensions_mapping_connector.form.field.label.job
+
+    pim-mapping-create-attribute:
+        module: pim/form/common/creation/field
+        parent: pim-mapping-create-modal
+        targetZone: fields
+        position: 30
+        config:
+            identifier: attribute
+            label: extensions_mapping_connector.form.field.label.attribute
+
+    pim-mapping-create-title:
+        module: pim/form/common/creation/field
+        parent: pim-mapping-create-modal
+        targetZone: fields
+        position: 40
+        config:
+            identifier: title
+            label: extensions_mapping_connector.form.field.label.title
+

@@ -1,0 +1,2 @@
+parameters:
+    extensions_mapping_connector.entity.mapping.class:  Extensions\Bundle\MappingConnectorBundle\Entity\Mapping

@@ -1,0 +1,22 @@
+services:
+    extensions_mapping_connector.step.mapping_import:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'import'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@extensions_mapping_connector.reader.file.csv_product'
+            - '@pim_connector.processor.denormalization.product'
+            - '@pim_connector.writer.database.product'
+            - '%pim_job_product_batch_size%'
+
+    extensions_mapping_connector.step.mapping_export:
+        class: '%pim_connector.step.item_step.class%'
+        arguments:
+            - 'export'
+            - '@event_dispatcher'
+            - '@akeneo_batch.job_repository'
+            - '@pim_connector.reader.database.product'
+            - '@pim_connector.processor.normalization.product'
+            - '@extensions_mapping_connector.writer.file.csv_product'
+            - '%pim_job_product_batch_size%'

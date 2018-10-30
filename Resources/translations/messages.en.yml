@@ -1,0 +1,58 @@
+# Job labels
+batch_jobs:
+    csv_product_import_mapping:
+        label: Product Import with Mapping
+        export.label: Product import
+    csv_product_export_mapping:
+        label: Product Export with Mapping
+        export.label: Product export
+
+confirmation.remove:
+    mapping: Do you really want to delete this mapping?
+
+flash:
+    mapping:
+        created: The mapping has been created
+        removed: The mapping has been removed
+        updated: The mapping has been updated
+
+error.removing:
+    mapping: The mapping could not be removed
+
+mapping:
+    overview: Mapping overview
+    edit: Edit a mapping
+    create: Create a mapping
+    this:
+        edit: Edit this mapping
+        show: Show this mapping
+        delete: Delete this mapping
+
+btn.create:
+    mapping: Create a mapping
+
+pim_custom_entity.reference_data.mapping:
+    edit: Edit a mapping
+    create: Create a mapping
+    index: List mappings
+    delete: Delete a mapping
+    menu_entry: Mappings
+    
+extensions_mapping_connector:
+    acl:
+        mapping:
+            index: List Mapping
+            create: Create Mapping
+            edit: Edit Mapping
+            delete: Delete Mapping
+
+    mapping:
+        field.label:
+            code: Code
+            attribute: Akeneo Attribute Code
+            job: Job Instance Code
+            title: CSV Column Name
+
+    form:
+        field.label:
+            job: Job Instance Code

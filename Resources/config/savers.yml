@@ -1,0 +1,7 @@
+services:
+    extensions_mapping_connector.saver.mapping:
+        class: '%akeneo_storage_utils.saver.base.class%'
+        arguments:
+            - '@doctrine.orm.entity_manager'
+            - '@event_dispatcher'
+            - '%extensions_mapping_connector.entity.mapping.class%'

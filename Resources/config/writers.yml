@@ -1,0 +1,13 @@
+parameters:
+    extensions_mapping_connector.writer.file.csv_product.class: Extensions\Bundle\MappingConnectorBundle\Writer\File\Csv\ProductWriter
+
+services:
+    extensions_mapping_connector.writer.file.csv_product:
+        class: '%extensions_mapping_connector.writer.file.csv_product.class%'
+        arguments:
+            - '@extensions_mapping_connector.array_converter.standard.column'
+            - '@pim_connector.factory.flat_item_buffer'
+            - '@pim_connector.writer.file.product.flat_item_buffer_flusher'
+            - '@pim_catalog.repository.attribute'
+            - '@pim_connector.writer.file.media_exporter_path_generator'
+            - ['pim_catalog_file', 'pim_catalog_image']

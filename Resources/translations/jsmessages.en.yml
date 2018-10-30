@@ -1,0 +1,43 @@
+batch_jobs:
+    csv_product_import_mapping:
+        label: Product Import with Mapping
+        validation.label: File validation
+        import.label: Product Import with Mapping
+    csv_product_export_mapping:
+        label: Product Export with Mapping
+        validation.label: File validation
+        export.label: Product Export with Mapping
+
+extensions_mapping_connector:
+    mapping:
+        index_title: "] -Inf, 1] {{ count }} Mapping|] 1, Inf [{{ count }} Mappings"
+        selected: mappings selected
+        form:
+            tab.properties.section.common: Common
+            tab.properties.section.label_translations: Labels
+        info:
+            update_successful: Mapping successfully updated
+            update_failed: The mapping could not be updated
+            field_not_ready: "The mapping cannot be saved right now. The following fields are not ready: {{ fields }}"
+        field.label:
+            code: Code
+            attribute: Akeneo Attribute Code
+            job: Job Instance Code
+            title: CSV Column Name
+
+    menu.item.reference_data:
+        mapping: Mapping
+
+    acl:
+        mapping:
+            index: List Mapping
+            create: Create Mapping
+            edit: Edit Mapping
+            delete: Delete Mapping
+
+    form:
+        field.label:
+            code: Code
+            attribute: Akeneo Attribute Code
+            job: Job Instance Code
+            title: CSV Column Name

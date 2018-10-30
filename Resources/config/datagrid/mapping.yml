@@ -1,0 +1,77 @@
+datagrid:
+    mapping:
+        options:
+            entityHint: mapping
+            manageFilters: false
+        source:
+            type: pim_datasource_default
+            entity: Extensions\Bundle\MappingConnectorBundle\Entity\Mapping
+            repository_method: createDatagridQueryBuilder
+        columns:
+            code:
+                label: extensions_mapping_connector.mapping.field.label.code
+            job:
+                label: extensions_mapping_connector.mapping.field.label.job
+            attribute:
+                label: extensions_mapping_connector.mapping.field.label.attribute
+            title:
+                label: extensions_mapping_connector.mapping.field.label.title
+        properties:
+            id: ~
+            edit_link:
+                type: url
+                route: pim_customentity_rest_get
+                params:
+                    - id
+                    - customEntityName
+            delete_link:
+                type: url
+                route: pim_customentity_rest_delete
+                params:
+                    - id
+                    - customEntityName
+        actions:
+            edit:
+                type:      navigate
+                label:     Edit the reference data
+                icon:      edit
+                link:      edit_link
+                rowAction: true
+            delete:
+                type:  delete
+                label: Delete the reference data
+                icon:  trash
+                link:  delete_link
+        sorters:
+            columns:
+                code:
+                    data_name: rd.code
+                job:
+                    data_name: rd.job
+            default:
+                code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'
+        filters:
+            columns:
+                job:
+                    type:      search
+                    label:     Job
+                    data_name: rd.job
+                code:
+                    type:      string
+                    label:     Code
+                    data_name: rd.code
+        mass_actions:
+            delete:
+                type: delete
+                label: pim.grid.mass_action.delete
+                entity_name: mapping
+                acl_resource: ~
+                handler: mass_delete
+                className: 'AknButton AknButton--important AknButtonList-item'
+                messages:
+                    confirm_title: pim_datagrid.mass_action.delete.confirm_title
+                    confirm_content: pim_datagrid.mass_action.delete.confirm_content
+                    confirm_ok: pim_datagrid.mass_action.delete.confirm_ok
+                    success: pim_datagrid.mass_action.delete.success
+                    error: pim_datagrid.mass_action.delete.error
+                    empty_selection: pim_datagrid.mass_action.delete.empty_selection

@@ -1,0 +1,38 @@
+{
+  "name": "nicolas-souffleur/mapping-connector-bundle",
+  "type": "symfony-bundle",
+  "description": "This new connector allows you to import and export products with specific columns names. Map them with the Akeneo attributes and integrate or generate the CSV you need.",
+  "homepage": "http://www.nicolas-souffleur.com",
+  "keywords": ["extensions", "akeneo" , "pim", "ecommerce", "workflow", "attributes", "import", "products", "magento", "connector", "mapping"],
+  "version": "1.0.0",
+  "require": {
+    "akeneo/pim-community-dev": "^2.3.0",
+    "akeneo-labs/custom-entity-bundle": "^2.4.0"
+  },
+  "license": "OSL-3.0",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/akeneo/pim-community-dev.git",
+      "branch": "master"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/akeneo-labs/CustomEntityBundle.git",
+      "branch": "master"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Nicolas Souffleur",
+      "email": "contact@nicolas-souffleur.com",
+      "homepage": "http://www.nicolas-souffleur.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Extensions\\Bundle\\MappingConnectorBundle\\": ""
+    }
+  },
+  "minimum-stability": "dev"
+}

@@ -1,0 +1,18 @@
+parameters:
+    extensions_mapping_connector.array_converter.flat.column.class: Extensions\Bundle\MappingConnectorBundle\ArrayConverter\FlatToStandard\ColumnMapping
+    extensions_mapping_connector.array_converter.standard.column.class: Extensions\Bundle\MappingConnectorBundle\ArrayConverter\StandardToFlat\ColumnMapping
+
+services:
+    extensions_mapping_connector.array_converter.flat.column:
+        class: '%extensions_mapping_connector.array_converter.flat.column.class%'
+        arguments:
+            - '@pim_connector.array_converter.flat_to_standard.product'
+            - '@pim_catalog.localization.localizer.converter'
+            - '@extensions_mapping_connector.repository.mapping'
+
+    extensions_mapping_connector.array_converter.standard.column:
+        class: '%extensions_mapping_connector.array_converter.standard.column.class%'
+        arguments:
+            - '@pim_connector.array_converter.standard_to_flat.product'
+            - '@pim_catalog.localization.localizer.converter'
+            - '@extensions_mapping_connector.repository.mapping'
