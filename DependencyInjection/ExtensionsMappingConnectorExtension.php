@@ -33,5 +33,6 @@ class ExtensionsMappingConnectorExtension extends Extension
         $loader->load('readers.yml');
         $loader->load('steps.yml');
         $loader->load('writers.yml');
+        $loader->load('event_subscribers.yml');
     }
 }

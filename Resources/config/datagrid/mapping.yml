@@ -8,8 +8,6 @@ datagrid:
             entity: Extensions\Bundle\MappingConnectorBundle\Entity\Mapping
             repository_method: createDatagridQueryBuilder
         columns:
-            code:
-                label: extensions_mapping_connector.mapping.field.label.code
             job:
                 label: extensions_mapping_connector.mapping.field.label.job
             attribute:
@@ -44,10 +42,12 @@ datagrid:
                 link:  delete_link
         sorters:
             columns:
-                code:
-                    data_name: rd.code
+                attribute:
+                    data_name: rd.attribute
                 job:
                     data_name: rd.job
+                title:
+                    data_name: rd.title
             default:
                 code: '%oro_datagrid.extension.orm_sorter.class%::DIRECTION_ASC'
         filters:

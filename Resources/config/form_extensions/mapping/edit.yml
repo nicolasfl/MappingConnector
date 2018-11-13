@@ -134,17 +134,6 @@ extensions:
                 sectionTitle: pim_custom_entity.form.tab.properties.section.common
                 dropZone: content
 
-    pim-mapping-edit-form-properties-code:
-        module: pim/form/common/fields/text
-        parent: pim-mapping-edit-form-properties-common
-        targetZone: content
-        position: 90
-        config:
-            fieldName: code
-            label: extensions_mapping_connector.mapping.field.label.code
-            required: true
-            readOnly: true
-
     pim-mapping-edit-job:
         module: pim/form/common/fields/text
         parent: pim-mapping-edit-form-properties-common

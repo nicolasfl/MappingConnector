@@ -1,7 +1,5 @@
 Extensions\Bundle\MappingConnectorBundle\Entity\Mapping:
     properties:
-        code:
-            - NotBlank: ~
         attribute:
             - NotBlank: ~
         title:

@@ -7,21 +7,12 @@ extensions:
                 subTitle: extensions_mapping_connector.menu.item.reference_data.mapping
             picture: illustrations/User.svg
             successMessage: pim_custom_entity.message.created
-            editRoute: pim_customentity_rest_edit
+            editRoute: pim_customentity_rest_index
             routerKey: code
             postUrl:
                 route: pim_customentity_rest_create
                 parameters:
                     customEntityName: mapping
-
-    pim-mapping-create-code:
-        module: pim/form/common/creation/field
-        parent: pim-mapping-create-modal
-        targetZone: fields
-        position: 10
-        config:
-            identifier: code
-            label: pim_custom_entity.form.field.label.code
 
     pim-mapping-create-job:
         module: pim/form/common/creation/field

@@ -4,7 +4,7 @@
   "description": "This new connector allows you to import and export products with specific columns names. Map them with the Akeneo attributes and integrate or generate the CSV you need.",
   "homepage": "http://www.nicolas-souffleur.com",
   "keywords": ["extensions", "akeneo" , "pim", "ecommerce", "workflow", "attributes", "import", "products", "magento", "connector", "mapping"],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "require": {
     "akeneo/pim-community-dev": "^2.3.0",
     "akeneo-labs/custom-entity-bundle": "^2.4.0"

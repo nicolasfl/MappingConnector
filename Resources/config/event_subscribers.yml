@@ -1,0 +1,8 @@
+parameters:
+    extensions_mapping_connector.event_subscriber.mapping_code.class: Extensions\Bundle\MappingConnectorBundle\EventSubscriber\MappingCodeSubscriber
+
+services:
+    extensions_mapping_connector.event_subscriber.mapping_code:
+        class: '%extensions_mapping_connector.event_subscriber.mapping_code.class%'
+        tags:
+            - { name: doctrine.event_subscriber }
