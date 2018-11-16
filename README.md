@@ -57,7 +57,8 @@ To use the MappingConnectorBundle, you only need to create a new import or expor
 ------
 * Add a select field to choose the Job Instance and the Akeneo Attribute in the creation form
 * Prices and metric attribute type support
-* Generate a Mapping code automatically 
+* [DONE] Generate a Mapping code automatically 
+* Enable multi-mapping for an attribute
 
 Don't hesitate to send me a message if you would like other features :)
 
