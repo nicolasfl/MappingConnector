@@ -3,7 +3,11 @@
 MappingConnectorBundle
 ==========================
 
-This new connector allows you to import and export products with specific columns names. Map them with the Akeneo attributes and integrate or generate the CSV you need.
+Import and export products with specific columns names. Map them with the Akeneo attributes and integrate or generate the CSV you need.
+
+The creation of specific connectors is a very frequent request in Akeneo projects. 
+The best practice would be to homogenize our data structures across all of our channels, but it is sometimes difficult to edit systems already developed for years. 
+This bundle allows you to adapt the exports and imports to any interface by adding a mapping from the back office between the Akeneo attributes and those of your other platforms.
 
 ## Requirements
 
