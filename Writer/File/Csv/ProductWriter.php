@@ -2,13 +2,13 @@
 
 namespace Extensions\Bundle\MappingConnectorBundle\Writer\File\Csv;
 
-use Pim\Component\Connector\Writer\File\Csv\ProductWriter as BaseWriter;
-use Akeneo\Component\Batch\Item\FlushableInterface;
-use Akeneo\Component\Batch\Item\InitializableInterface;
-use Akeneo\Component\Batch\Item\ItemWriterInterface;
-use Akeneo\Component\Batch\Step\StepExecutionAwareInterface;
-use Pim\Component\Connector\Writer\File\ArchivableWriterInterface;
-use Akeneo\Component\Batch\Job\JobParameters;
+use Akeneo\Pim\Enrichment\Component\Product\Connector\Writer\File\Csv\ProductWriter as BaseWriter;
+use Akeneo\Tool\Component\Batch\Item\FlushableInterface;
+use Akeneo\Tool\Component\Batch\Item\InitializableInterface;
+use Akeneo\Tool\Component\Batch\Item\ItemWriterInterface;
+use Akeneo\Tool\Component\Batch\Job\JobParameters;
+use Akeneo\Tool\Component\Batch\Step\StepExecutionAwareInterface;
+use Akeneo\Tool\Component\Connector\Writer\File\ArchivableWriterInterface;
 
 
 class ProductWriter extends BaseWriter implements ItemWriterInterface, InitializableInterface, FlushableInterface, StepExecutionAwareInterface, ArchivableWriterInterface

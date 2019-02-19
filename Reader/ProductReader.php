@@ -1,7 +1,7 @@
 <?php
 namespace Extensions\Bundle\MappingConnectorBundle\Reader;
 
-use Pim\Component\Connector\Reader\File\Csv\ProductReader as BaseReader;
+use Akeneo\Pim\Enrichment\Component\Product\Connector\Reader\File\Csv\ProductReader as BaseReader;
 
 /**
  * Class ProductReader

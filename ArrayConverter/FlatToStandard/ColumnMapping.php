@@ -2,11 +2,11 @@
 
 namespace Extensions\Bundle\MappingConnectorBundle\ArrayConverter\FlatToStandard;
 
-use Pim\Component\Connector\ArrayConverter\ArrayConverterInterface;
-use Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
-use Pim\Component\Connector\ArrayConverter\FlatToStandard\EntityWithValuesDelocalized;
-use Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface;
-use Pim\Component\Connector\Exception\DataArrayConversionException;
+use Akeneo\Pim\Enrichment\Component\Product\Connector\ArrayConverter\FlatToStandard\EntityWithValuesDelocalized;
+use Akeneo\Pim\Enrichment\Component\Product\Localization\Localizer\AttributeConverterInterface;
+use Akeneo\Tool\Component\Connector\ArrayConverter\ArrayConverterInterface;
+use Akeneo\Tool\Component\Connector\Exception\DataArrayConversionException;
+use Akeneo\Tool\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
 
 /**
  * Class ColumnMapping

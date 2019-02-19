@@ -2,19 +2,18 @@
 
 namespace Extensions\Bundle\MappingConnectorBundle\Job\JobParameters;
 
-use Akeneo\Component\Batch\Job\JobInterface;
-use Akeneo\Component\Batch\Job\JobParameters\ConstraintCollectionProviderInterface;
-use Akeneo\Component\Batch\Job\JobParameters\DefaultValuesProviderInterface;
+use Akeneo\Channel\Component\Repository\ChannelRepositoryInterface;
+use Akeneo\Channel\Component\Repository\LocaleRepositoryInterface;
+use Akeneo\Pim\Enrichment\Component\Product\Query\Filter\Operators;
+use Akeneo\Pim\Enrichment\Component\Product\Validator\Constraints\Channel;
+use Akeneo\Pim\Enrichment\Component\Product\Validator\Constraints\FilterStructureLocale;
+use Akeneo\Tool\Component\Batch\Job\JobInterface;
+use Akeneo\Tool\Component\Batch\Job\JobParameters\ConstraintCollectionProviderInterface;
+use Akeneo\Tool\Component\Batch\Job\JobParameters\DefaultValuesProviderInterface;
+use Akeneo\Tool\Component\Localization\Localizer\LocalizerInterface;
 use Symfony\Component\Validator\Constraints\Collection;
-use Pim\Component\Catalog\Validator\Constraints\Channel;
-use Pim\Component\Connector\Validator\Constraints\FilterStructureLocale;
-use Pim\Component\Connector\Validator\Constraints\ProductFilterData;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
-use Pim\Component\Catalog\Repository\ChannelRepositoryInterface;
-use Pim\Component\Catalog\Repository\LocaleRepositoryInterface;
-use Akeneo\Component\Localization\Localizer\LocalizerInterface;
-use Pim\Component\Catalog\Query\Filter\Operators;
 
 /**
  * Class MappingExport
@@ -79,12 +78,6 @@ class MappingExport implements ConstraintCollectionProviderInterface, DefaultVal
             ],
         ]);
         $constraintFields['filters']          = [
-            new ProductFilterData([
-                'groups' => [
-                    'Default',
-                    'DataFilters'
-                ]
-            ]),
             new Collection([
                 'fields'           => [
                     'structure' => [

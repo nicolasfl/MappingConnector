@@ -5,9 +5,8 @@
   "homepage": "http://www.nicolas-souffleur.com",
   "keywords": ["extensions", "akeneo" , "pim", "ecommerce", "workflow", "attributes", "import", "products", "magento", "connector", "mapping"],
   "require": {
-    "akeneo/pim-community-dev": "^2.3.0",
-    "akeneo-labs/custom-entity-bundle": "^2.4.0",
-    "nicolas-souffleur/mapping-connector-bundle": "1.0.*"
+    "akeneo/pim-community-dev": "^3.0.0",
+    "akeneo-labs/custom-entity-bundle": "^3.0.0"
   },
   "license": "OSL-3.0",
   "repositories": [
