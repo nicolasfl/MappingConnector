@@ -14,13 +14,13 @@ This bundle allows you to adapt the exports and imports to any interface by addi
 | MappingConnectorBundle     | Akeneo PIM Community Edition | Akeneo PIM Enterprise Edition |
 |:------------------------------:|:----------------------------:|:-----------------------------:|
 | v1.0.*                         | v2.3.*                         | v2.3.*                              |
-
+| v1.1.*                         | v3.0.*                         | v3.0.*                              |
 ## Installation
 ------
 
 Next, enter the following command line:
 ```console
-$php composer.phar require "nicolas-souffleur/mapping-connector-bundle":"1.0.*"
+$php composer.phar require "nicolas-souffleur/mapping-connector-bundle":"1.1.*"
 ```
 
 Then enable the bundle in the ```app/AppKernel.php``` file in the registerProjectBundles() method:
