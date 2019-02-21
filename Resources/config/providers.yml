@@ -1,7 +1,7 @@
 services:
     # Job Instances configuration
     extensions_mapping_connector.job.job_instance_configuration.csv_product_import_mapping:
-        class: '%pim_enrich.provider.form.job_instance.class%'
+        class: Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider
         arguments:
             -
                  csv_product_import_mapping: pim-job-instance-csv-product-import-mapping
@@ -9,7 +9,7 @@ services:
             - { name: pim_enrich.provider.form, priority: 90 }
 
     extensions_mapping_connector.job.job_instance_configuration.csv_product_export_mapping:
-        class: '%pim_enrich.provider.form.job_instance.class%'
+        class: Akeneo\Platform\Bundle\ImportExportBundle\Provider\Form\JobInstanceFormProvider
         arguments:
             -
                 csv_product_export_mapping: pim-job-instance-csv-product-export-mapping

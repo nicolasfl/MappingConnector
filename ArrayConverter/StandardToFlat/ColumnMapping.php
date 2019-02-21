@@ -2,10 +2,10 @@
 
 namespace Extensions\Bundle\MappingConnectorBundle\ArrayConverter\StandardToFlat;
 
-use Pim\Component\Connector\ArrayConverter\ArrayConverterInterface;
-use Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
-use Pim\Component\Connector\ArrayConverter\StandardToFlat\ProductLocalized;
-use Pim\Component\Catalog\Localization\Localizer\AttributeConverterInterface;
+use Akeneo\Pim\Enrichment\Component\Product\Connector\ArrayConverter\StandardToFlat\ProductLocalized;
+use Akeneo\Pim\Enrichment\Component\Product\Localization\Localizer\AttributeConverterInterface;
+use Akeneo\Tool\Component\Connector\ArrayConverter\ArrayConverterInterface;
+use Akeneo\Tool\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
 
 /**
  * Class ColumnMapping

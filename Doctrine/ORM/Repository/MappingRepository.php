@@ -2,9 +2,9 @@
 
 namespace Extensions\Bundle\MappingConnectorBundle\Doctrine\ORM\Repository;
 
-use Pim\Bundle\CustomEntityBundle\Entity\Repository\CustomEntityRepository;
+use Akeneo\Tool\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
 use Extensions\Bundle\MappingConnectorBundle\Repository\MappingRepositoryInterface;
-use Akeneo\Component\StorageUtils\Repository\IdentifiableObjectRepositoryInterface;
+use Pim\Bundle\CustomEntityBundle\Entity\Repository\CustomEntityRepository;
 
 /**
  * Class MappingRepository
