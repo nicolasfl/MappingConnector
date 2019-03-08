@@ -28,6 +28,12 @@ Then enable the bundle in the ```app/AppKernel.php``` file in the registerProjec
 $bundles[] = new \Extensions\Bundle\MappingConnectorBundle\ExtensionsMappingConnectorBundle()
 ```
 
+Enter the following commands in your teminal:
+```console
+$php bin/console doctrine:schema:update --force 
+$rm -rf var/cache; bin/console pim:install:asset; yarn run webpack; 
+```
+
 Warning : The Custom Entity Akeneo Labs extension is required to use this extension.
 
 ## Usage
